@@ -6,7 +6,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <?php require_once 'process.php'; ?>
+        <?php require('config.php') ?>
+        <?php require('process.php');?>
 
         <div class='container'>
         <?php
