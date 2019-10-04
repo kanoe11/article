@@ -17,8 +17,7 @@ if (isset($_POST['enregister'])){
     $prenom = $_POST['prenom'];
     $contenu = $_POST['contenu'];
 
-    $mysqli->query("INSERT INTO article (titre, nom, prenom , contenu) VALUES('$titre', '$nom', '$prenom', '$contenu')") or  die (mysqli_error($mysqli));
-            
+    $mysqli->query("INSERT INTO article (titre, nom, prenom , contenu) VALUES('$titre', '$nom', '$prenom', '$contenu')") or  die (mysqli_error($mysqli));          
     
     header('Location: index.php');
 }    
