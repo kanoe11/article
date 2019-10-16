@@ -34,17 +34,19 @@
                             <td> <?php echo $data[$i]['titre']; ?> </td>
                             <td> <?php echo $data[$i]['nom'].' '.$data[$i]['prenom']; ?> </td>
                             <td class="textToLong"> <?php echo $data[$i]['contenu']; ?> </td>
-                            <td> <?php echo "<a href='view.php?id=".$data[$i]['id']."'>voir </a>" ?> </td>
-                            <td> <?php echo "<a href='modify.php?id=".$data[$i]['id']."'>modifier</a>" ?> </td>
-                            <td> <?php echo "<a href='supprimer.php?id=".$data[$i]['id']."'>supprimer</a>" ?> </td>
+                            <td> <?php echo "<a href='view.php?voir=".$data[$i]['id']."'>voir </a>" ?> </td>
+                            <td> <?php echo "<a href='modify.php?mod=".$data[$i]['id']."'>modifier</a>" ?> </td>
+                            <td> <?php echo "<a href='supprimer.php?del=".$data[$i]['id']."'>supprimer</a>" ?> </td>
                         </tr>
                    <?php }
                    $result->free();
                     ?>
               </table>
-              <a href='?offset=1'>  1 </a>
-              <a href='?offset=2'>  2 </a>
-              <a href='?offset=3'>  3 </a>
+              <a href='?beginPage=1'>  1 </a>
+              <a href='?beginPage=2'>  2 </a>
+              <a href='?beginPage=3'>  3 </a>
+              <a href='?beginPage=4'>  4 </a>
+              <a href='?beginPage=5'>  5 </a>
             </div>
         </div>
   </div>
