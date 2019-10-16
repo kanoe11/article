@@ -1,8 +1,8 @@
 
     <?php
     include 'header.php';
-    if(isset($_GET['id'])) {
-        $id = $_GET['id']; 
+    if(isset($_GET['mod'])) {
+        $id = $_GET['mod']; 
     }
     $result = $mysqli->query("SELECT * FROM article WHERE id = ". $id) or die($mysqli->error());
 
@@ -13,7 +13,7 @@
         $contenu =  $row['contenu'];   
 
 
-    if (isset($_POST['update'])){
+    /*if (isset($_POST['update'])){
         $id = $_POST['id'];
         $titre = $_POST['titre'];
         $nom = $_POST['nom'];
@@ -23,13 +23,13 @@
         
         $mysqli->query("UPDATE article SET titre='$titre' , nom='$nom' , prenom='$prenom' , contenu='$contenu' WHERE id='$id'") or die($mysqli->error);
     
-    }
+    }*/
 ?>
 
                 <section id="article"  >
         <div class="container">
         <div class="col-lg-12 mx-auto text-center pb-5">
-            <h2>Ajouter un article</h2>
+            <h2>Modifier un article</h2>
         </div>
         <div class="row">
             <!--form -->
