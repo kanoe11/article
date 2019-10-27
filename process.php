@@ -1,8 +1,7 @@
 <?php
 
 
-
-$mysqli =  new mysqli('localhost', 'root', '', 'blog') or die (mysqli_error($mysqli));
+require 'config.php';
 
 $id = 0;
 $update = false;
@@ -24,7 +23,7 @@ if (isset($_POST['enregister'])){
 
 if (isset($_GET['supprimer'])){
     $id = $_GET['supprimer'];
-    $mysqli->query("DELETE FROM article WHERE id=$id") or die($mysqli->error());
+    $mysqli->query("DELETE FROM article WHERE id = ".$id) or die($mysqli->error());
 
     header("Location: index.php");
 }
