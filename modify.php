@@ -4,6 +4,7 @@
     if(isset($_GET['mod'])) {
         $id = $_GET['mod']; 
     }
+    require 'config.php';
     $result = $mysqli->query("SELECT * FROM article WHERE id = ". $id) or die($mysqli->error());
 
     $row = $result->fetch_array();
