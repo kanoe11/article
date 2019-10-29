@@ -50,7 +50,7 @@
         <div class="container">
           <!-- Navbar Brand -->
           <div class="navbar-header d-flex align-items-center justify-content-between">
-            <!-- Navbar Brand --><a href="#" class="navbar-brand">Muzik Kontrol</a>
+            <!-- Navbar Brand --><li  class="navbar-brand">Muzik Kontrol</li>
             <!-- Toggle Button-->
             <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span></span><span></span><span></span></button>
           </div>
@@ -70,3 +70,11 @@
         </div>
       </nav>
     </header>
+ <!--   <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.php">Home<span class="glyphicon glyphicon-arrow-right"></span></a></li>
+    <li class="breadcrumb-item"><a href="add.php">Ajouter<span class="glyphicon glyphicon-arrow-right"></span></a></li>
+    <li class="breadcrumb-item active">Post<span class="glyphicon glyphicon-arrow-right"></span></li>
+    <li class="breadcrumb-item"><a href="#">Contact</a></li>
+  </ol>
+</nav>-->
