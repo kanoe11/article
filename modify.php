@@ -69,8 +69,8 @@
                     <div class="form-group">
                         <label for="cardNumber">Contenu</label>
                         <div class="input-group">
-                        <textarea name="contenu" id="form7" class="md-textarea form-control" rows="3" class="form-control" required></textarea> 
-                        <?php echo $contenu ?> 
+                        <textarea name="contenu" id="form7" class="md-textarea form-control" rows="3" class="form-control" required> <?php echo $contenu ?>  </textarea> 
+                        
                         </div>
                     </div>
                     <div class="row">
