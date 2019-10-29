@@ -19,7 +19,6 @@
                 <?php 
                   $offset = 3;
                   $beginPage = 1;
-                    //var_dump($_GET);
                     if(isset($_GET['beginPage'])) {
                       $beginPage = $_GET['beginPage'] * 3 ;
                     }
