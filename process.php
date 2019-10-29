@@ -34,7 +34,7 @@ if (isset($_POST['update'])){
     $prenom = $_POST['prenom'];
     $contenu = $_POST['contenu'];
 
-    $mysqli->query("UPDATE article SET titre='$titre' , nom='$nom' , prenom='$prenom' , contenu='$contenu' WHERE id='.$id'") or die($mysqli->error());
+    $mysqli->query("UPDATE article SET titre='$titre' , nom='$nom' , prenom='$prenom' , contenu='$contenu' WHERE id='".$id"'") or die($mysqli->error());
 
     header("Location: index.php");
 }
