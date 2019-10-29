@@ -10,8 +10,8 @@ if(isset($_GET['voir']) && !empty($_GET['voir'])) {
     <div class="container">
       <div class="row">
             <h1><?php echo $data[0]['titre']?></h1>
-            <div class="post-body">
-                  <p class="lead"> <?php echo $prenom?><?php echo $nom?><</p>
+            <div class="post-body  mt-5">
+                  <p class="lead"> <?php echo $data[0]['prenom'] ?><?php echo $data[0]['nom']?></p>
                   <p><?php echo $data[0]['contenu'] ?>
             </div>
         </div>
