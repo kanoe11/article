@@ -28,13 +28,21 @@ if (isset($_GET['supprimer'])){
     header("Location: index.php");
 }
 
-if (isset($_POST['update'])){
-    $titre = $_POST['titre'];
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $contenu = $_POST['contenu'];
 
-    $mysqli->query("UPDATE article SET titre='$titre' , nom='$nom' , prenom='$prenom' , contenu='$contenu' WHERE id='".$id"'") or die($mysqli->error());
+if (isset($_POST['update'])){
+    echo "ici";
+    $titre = $_POST['titre'];
+    $id = $_POST['id'];
+    $nom =  $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $contenu =  $_POST['contenu'];
+    $resultat  =  addslashes($contenu);
+    $sql = "UPDATE article SET titre='$titre' , nom='$nom' , prenom='$prenom' , contenu='".$resultat."' WHERE id=".$id;
+
+    $mysqli->query($sql) or  die (mysqli_error($mysqli));
+    
+
+
 
     header("Location: index.php");
 }
