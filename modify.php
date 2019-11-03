@@ -8,6 +8,7 @@
     $result = $mysqli->query("SELECT * FROM article WHERE id = ". $id) or die($mysqli->error());
 
     $row = $result->fetch_array();
+        $id = $row['id']; 
         $titre = $row['titre'];
         $nom = $row['nom'];
         $prenom = $row['prenom'];
@@ -54,6 +55,7 @@
                     
                 <div id="nav-tab-card" class="tab-pane fade show active">
                     <form role="form" action="process.php" method="POST" >
+                    <input type="hidden" value="<?php echo $id ?>" name="id" />
                     <div class="form-group">
                         <label for="title">Titre</label>
                         <input type="text" name="titre" value="<?php echo $titre?>" placeholder="Tire" required class="form-control">
@@ -66,6 +68,7 @@
                         <label for="name">nom</label>
                         <input type="text" name="nom" value="<?php echo $nom?>"  placeholder="Nom" required class="form-control">
                     </div>
+
                     <div class="form-group">
                         <label for="cardNumber">Contenu</label>
                         <div class="input-group">
