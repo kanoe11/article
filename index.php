@@ -28,11 +28,17 @@
                     $data = $result->fetch_all(MYSQLI_ASSOC);
                     
                     for ( $i = 0 ; $i < count($data); $i++ ) { ?>
+                       <?php if (strlen($data[$i]['contenu']) > 300) {
+                          $strraccourcis =  substr($data[$i]['contenu'],0,12);
+                        } else {
+                            $strraccourcis =  $data[$i]['contenu'];
+                          }
+                     ?> 
                         <tr>
                         <td> <?php echo $data[$i]['id']; ?> </td>
                             <td> <?php echo $data[$i]['titre']; ?> </td>
                             <td> <?php echo $data[$i]['nom'].' '.$data[$i]['prenom']; ?> </td>
-                            <td class="textToLong"> <?php echo $data[$i]['contenu']; ?> </td>
+                            <td class="textToLong"> <?php echo $strraccourcis. "..." ; ?> </td>
                             <td> <?php echo "<a href='view.php?voir=".$data[$i]['id']."'>voir </a>" ?> </td>
                             <td> <?php echo "<a href='modify.php?mod=".$data[$i]['id']."'>modifier</a>" ?> </td>
                             <td> <?php echo "<a href='supprimer.php?del=".$data[$i]['id']."'>supprimer</a>" ?> </td>
