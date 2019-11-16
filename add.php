@@ -68,6 +68,16 @@
                         <?php echo $contenu ?> 
                         </div>
                     </div>
+                    <div class="form-group">
+                        <select name="type">
+                        <?php
+                        $sql = "";
+                        for($i = 0; ; $i++)
+                        <?>
+                        <option value="article">article</option>
+                        <option value="news">news</option>
+                        </select>
+                    </div>
                     <div class="row">
                         <div class="col-sm-8">
                         </div>

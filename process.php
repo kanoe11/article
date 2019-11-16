@@ -15,8 +15,9 @@ if (isset($_POST['enregister'])){
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $contenu = $_POST['contenu'];
+    $type = $_POST['type'];
 
-    $mysqli->query("INSERT INTO article (titre, nom, prenom , contenu) VALUES('$titre', '$nom', '$prenom', '$contenu')") or  die (mysqli_error($mysqli));          
+    $mysqli->query("INSERT INTO article (titre, nom, prenom , contenu, type ) VALUES('$titre', '$nom', '$prenom', '$contenu','$type')") or  die (mysqli_error($mysqli));          
     
     header('Location: index.php');
 }    
@@ -38,7 +39,7 @@ if (isset($_POST['update'])){
     $contenu =  $_POST['contenu'];
     $resultat  =  addslashes($contenu);
     $sql = "UPDATE article SET titre='$titre' , nom='$nom' , prenom='$prenom' , contenu='".$resultat."' WHERE id=".$id;
-
+     
     $mysqli->query($sql) or  die (mysqli_error($mysqli));
     
 
@@ -46,3 +47,5 @@ if (isset($_POST['update'])){
 
     header("Location: index.php");
 }
+
+
