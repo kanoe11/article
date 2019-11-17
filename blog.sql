@@ -1,13 +1,14 @@
+DROP DATABASE blog;
 CREATE DATABASE blog;
 
 CREATE TABLE article
 (
     id int(20)  NOT NULL PRIMARY KEY AUTO_INCREMENT,
     titre varchar(100) NOT NULL ,
-    user_id int(50) NOT NULL REFERENCES uti 
+    user_id int(50) NOT NULL ,
     contenu text NOT NULL,
     type_article_id int NOT NULL,
-    FOREIGN key (type_article_id) REFERENCES type_article (id);
+    FOREIGN key (type_article_id) REFERENCES type_article (id)
 );
 
 create table user ( 
@@ -18,8 +19,6 @@ create table user (
     );
 
 create table type_article ( 
-    id int not null , 
+    id int(20) not null primary key auto_increment,
     nom varchar(100) not null
     );
-
-

@@ -22,7 +22,7 @@
     } 
 ?>
 
-                <section id="article"  >
+    <section id="article"  >
         <div class="container">
         <div class="col-lg-12 mx-auto text-center pb-5">
             <h2>Ajouter un article</h2>
@@ -54,12 +54,14 @@
                         <input type="text" name="titre" value="<?php echo $titre?>" placeholder="Tire" required class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="prenom">Prénom</label>
-                        <input type="text" name="prenom"  value="<?php echo $prenom?>" placeholder="Prenom" required class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="name">nom</label>
-                        <input type="text" name="nom" value="<?php echo $nom?>"  placeholder="Nom" required class="form-control">
+                    <select name ='type_article'>
+                    <?php
+                    $result = $mysqli->query(" select * from type_article ");
+                    $data = $result->fetch_all(MYSQLI_ASSOC);
+
+                    for ( $i = 0 ; $i < count($data); $i++ ) { ?>
+                    <option value="<?php echo $data[$i]['id']?>"> <?php echo $data[$i]['nom'];?> </option>  
+                    <?php } ?>
                     </div>
                     <div class="form-group">
                         <label for="cardNumber">Contenu</label>
