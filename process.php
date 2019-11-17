@@ -6,20 +6,21 @@ require 'config.php';
 $id = 0;
 $update = false;
 $titre = '';
-$nom = '';
-$prenom = '';
 $contenu = '';
 
 if (isset($_POST['enregister'])){
     $titre = $_POST['titre'];
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
     $contenu = $_POST['contenu'];
-    $type = $_POST['type'];
-
-    $mysqli->query("INSERT INTO article (titre, nom, prenom , contenu, type ) VALUES('$titre', '$nom', '$prenom', '$contenu','$type')") or  die (mysqli_error($mysqli));          
+    $typeIdArticle = $_POST['type_article'];
+    $user_id = 0;
+    //Si la requete est executé correctement elle renvoie vrai sinon il y a forcement une erreur
+    //Ca evite de faire des die pour rien 
+    if( $mysqli->query("INSERT INTO article (titre, user_id , contenu, type_article_id) VALUES('$titre', '$user_id','$contenu','$typeIdArticle')")) {
+        header('Location: index.php');
+    }
+    echo 'Erreur de base de données : '. mysqli_error($mysqli);       
+   
     
-    header('Location: index.php');
 }    
 
 if (isset($_GET['supprimer'])){

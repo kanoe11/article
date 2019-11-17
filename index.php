@@ -27,7 +27,10 @@
                     $result = $mysqli->query(" select * from article where type = 'article'");
                     $data = $result->fetch_all(MYSQLI_ASSOC);
                     
-                    for ( $i = 0 ; $i < count($data); $i++ ) { ?>
+                    for ( $i = 0 ; $i < count($data); $i++ ) { 
+                      echo $data[$i]['nom'] = '' ;
+                      $data[$i]['prenom'] = '';
+                      ?>
                        <?php if (strlen($data[$i]['contenu']) > 300) {
                           $strraccourcis =  substr($data[$i]['contenu'],0,12);
                         } else {
