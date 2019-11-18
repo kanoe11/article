@@ -51,7 +51,7 @@
                     <form role="form" action="process.php" method="POST" >
                     <div class="form-group">
                         <label for="title">Titre</label>
-                        <input type="text" name="titre" value="<?php echo $titre?>" placeholder="Tire" required class="form-control">
+                        <input type="text" name="titre" value="<?php echo $titre?>" placeholder="Titre" required class="form-control">
                     </div>
                     <div class="form-group">
                     <select name ='type_article'>
@@ -69,16 +69,6 @@
                         <textarea name="contenu" id="form7" class="md-textarea form-control" rows="3" class="form-control" required></textarea> 
                         <?php echo $contenu ?> 
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <select name="type">
-                        <?php
-                        $sql = "";
-                        for($i = 0; ; $i++)
-                        <?>
-                        <option value="article">article</option>
-                        <option value="news">news</option>
-                        </select>
                     </div>
                     <div class="row">
                         <div class="col-sm-8">
