@@ -8,7 +8,9 @@ CREATE TABLE article
     user_id int(50) NOT NULL ,
     contenu text NOT NULL,
     type_article_id int NOT NULL,
-    FOREIGN key (type_article_id) REFERENCES type_article (id)
+    FOREIGN KEY (type_article_id) REFERENCES type_article (id),
+    FOREIGN KEY (user_id) REFERENCES user(id)
+
 );
 
 create table user ( 
