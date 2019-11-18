@@ -24,7 +24,7 @@
                     } */
 
 
-                    $result = $mysqli->query(" select * from article where type = 'article'");
+                    $result = $mysqli->query(" select * from article where type_article_id = 'article'");
                     $data = $result->fetch_all(MYSQLI_ASSOC);
                     
                     for ( $i = 0 ; $i < count($data); $i++ ) { 
