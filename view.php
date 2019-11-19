@@ -2,8 +2,14 @@
 require 'config.php';
 if(isset($_GET['voir']) && !empty($_GET['voir'])) {
 	$id = $_GET['voir'];
-	$result = $mysqli->query(" select * from article ");
-    $data = $result->fetch_all(MYSQLI_ASSOC);
+	$result = $mysqli->query(" select * from article");
+    /*$data = $result->fetch_all(MYSQLI_ASSOC);*/
+    $row = $result->fetch_array();
+        $id = $row['id']; 
+        $titre = $row['titre'];
+        /*$nom = $row['nom'];*/
+        $prenom = $row['prenom'];
+        $contenu =  $row['contenu'];
 }
 ?>
 
