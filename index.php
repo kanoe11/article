@@ -17,14 +17,15 @@
                     </tr>
                 </thead>
                 <?php 
-/*                   $offset = 50;
+              /* $offset = 50;
                   $beginPage = 1;
                     if(isset($_GET['beginPage'])) {
                       $beginPage = $_GET['beginPage'] * $offset ;
                     } */
 
 
-                    $result = $mysqli->query(" select * from article where type_article_id = 'article'");
+                    $result = $mysqli->query("SELECT * FROM type_article INNER JOIN article ON type_article.id= article.type_article_id
+                    where nom = 'article'");
                     $data = $result->fetch_all(MYSQLI_ASSOC);
                     
                     for ( $i = 0 ; $i < count($data); $i++ ) { 
