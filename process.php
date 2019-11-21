@@ -35,11 +35,9 @@ if (isset($_POST['update'])){
     echo "ici";
     $titre = $_POST['titre'];
     $id = $_POST['id'];
-    $nom =  $_POST['nom'];
-    $prenom = $_POST['prenom'];
     $contenu =  $_POST['contenu'];
     $resultat  =  addslashes($contenu);
-    $sql = "UPDATE article SET titre='$titre' , nom='$nom' , prenom='$prenom' , contenu='".$resultat."' WHERE id=".$id;
+    $sql = "UPDATE article SET titre='$titre' ,contenu='".$resultat."' WHERE id=".$id;
      
     $mysqli->query($sql) or  die (mysqli_error($mysqli));
     

@@ -10,8 +10,6 @@
     $row = $result->fetch_array();
         $id = $row['id']; 
         $titre = $row['titre'];
-        $nom = $row['nom'];
-        $prenom = $row['prenom'];
         $contenu =  $row['contenu'];   
 
 
@@ -60,15 +58,6 @@
                         <label for="title">Titre</label>
                         <input type="text" name="titre" value="<?php echo $titre?>" placeholder="Tire" required class="form-control">
                     </div>
-                    <div class="form-group">
-                        <label for="prenom">Prénom</label>
-                        <input type="text" name="prenom"  value="<?php echo $prenom?>" placeholder="Prenom" required class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="name">nom</label>
-                        <input type="text" name="nom" value="<?php echo $nom?>"  placeholder="Nom" required class="form-control">
-                    </div>
-
                     <div class="form-group">
                         <label for="cardNumber">Contenu</label>
                         <div class="input-group">
