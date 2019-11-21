@@ -2,23 +2,16 @@
 require 'config.php';
 if(isset($_GET['voir']) && !empty($_GET['voir'])) {
 	$id = $_GET['voir'];
-	$result = $mysqli->query(" select * from article");
-    /*$data = $result->fetch_all(MYSQLI_ASSOC);*/
-    $row = $result->fetch_array();
-        $id = $row['id']; 
-        $titre = $row['titre'];
-        /*$nom = $row['nom'];*/
-        $prenom = $row['prenom'];
-        $contenu =  $row['contenu'];
+	$result = $mysqli->query(" select * from article where id =". $id);
+    $data = $result->fetch_array(MYSQLI_ASSOC);
 }
 ?>
 
     <div class="container">
       <div class="row">
-            <h1><?php echo $data[$i]['titre']; ?></h1>
+            <h1><?php echo $data['titre']; ?></h1>
             <div class="post-body  mt-5">
-                  <p class="lead"><?php echo $data[$i]['nom'].' '.$data[$i]['prenom']; ?></p>
-                  <p><?php echo $data[0]['contenu'] ?>
+                  <p><?php echo $data['contenu'] ?>
             </div>
         </div>
     </div>
