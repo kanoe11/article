@@ -48,10 +48,10 @@
                 <!--  info-->
                     
                 <div id="nav-tab-card" class="tab-pane fade show active">
-                    <form role="form" action="process.php" method="POST" >
+                    <form role="form"  method="POST" >
                     <div class="form-group">
                         <label for="title">Titre</label>
-                        <input type="text" name="titre" value="<?php echo $titre?>" placeholder="Titre" required class="form-control">
+                        <input type="text" id="titre"  name="titre" value="<?php echo $titre?>" placeholder="Titre" required class="form-control">
                     </div>
                     <div class="form-group">
                     <select name ='type_article'>
@@ -66,7 +66,7 @@
                     <div class="form-group">
                         <label for="cardNumber">Contenu</label>
                         <div class="input-group">
-                        <textarea name="contenu" id="form7" class="md-textarea form-control" rows="3" class="form-control" required></textarea> 
+                        <textarea name="contenu" id="contenu" class="md-textarea form-control" rows="3" class="form-control" required></textarea> 
                         <?php echo $contenu ?> 
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                         <div class="col-sm-4">
                         </div>
                     </div>
-                    <button type="submit" name="enregister" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Envoyez  </button>
+                    <button id="add" name="enregister" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Envoyez  </button>
                     </form>
                 </div>
                 </div>
