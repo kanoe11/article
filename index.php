@@ -1,7 +1,6 @@
 <?php include('header.php');
 
 ?>
-
     <!-- Hero Section-->
       <div class="container">
         <div class="row">
@@ -22,7 +21,6 @@
                     if(isset($_GET['beginPage'])) {
                       $beginPage = $_GET['beginPage'] * $offset ;
                     } */
-
 
                     $result = $mysqli->query("SELECT * FROM type_article INNER JOIN article ON type_article.id= article.type_article_id
                     where nom = 'article'");
@@ -51,11 +49,11 @@
                    $result->free();
                     ?>
               </table>
-              <a href='?beginPage=1'>  1 </a>
+              <!-- <a href='?beginPage=1'>  1 </a>
               <a href='?beginPage=2'>  2 </a>
               <a href='?beginPage=3'>  3 </a>
               <a href='?beginPage=4'>  4 </a>
-              <a href='?beginPage=5'>  5 </a>
+              <a href='?beginPage=5'>  5 </a> -->
             </div>
         </div>
   </div>
