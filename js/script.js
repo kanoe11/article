@@ -1,23 +1,26 @@
 $(document).ready(function(){
-    $('#add').on('click' , function(){
+
+    $('#add').click(function(e){
+       // empeche le formulaire de s'envoyer en html
+       debugger;
+        e.preventDefault();
         var titre = $("#titre").val();
         var contenu = $("#contenu").val();
-        $.ajax(
-            {
+        $.ajax({
                 url:'process.php',
                 type: 'POST',
                 data: {
                     titre: titre,
-                    contenu: contenu
+                    contenu: contenu,
+                    save : ''
                 },
-                success: function (){
-                alert('formuliare bien envoyer');
+                success: function (data){
+                    console.log(data);
+                    alert('formuliare bien envoyer');
               },
-                dataType:'text',
                 error: function(resultat,statut){
                      alert('erreur non envoyer');
                 }
-            }
-        )
-    })
+            });
+    });
 });
