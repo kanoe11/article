@@ -1,27 +1,4 @@
-
-    <?php
-    include 'header.php';
-    // GET modifier = on est en modification et on alimente le formulaire avec les variables
-    if (isset($_GET['modifier'])){
-        $id = $_GET['modifier'];
-        // requete pour recuper UNE LIGNE !!
-        $result = $mysqli->query("SELECT * FROM article WHERE id=$id") or die($mysqli->error()); 
-        // row = resultat de ma ligne , contient les champs et les valeurs
-        $row = $result->fetch_array();
-        $titre = $row['titre'];
-        $nom = $row['nom'];
-        $prenom = $row['prenom'];
-        //permet de supprimer des espaces au debut et a la fin d'une chaine 
-        $contenu =  trim($row['contenu']);   
-    } else {
-        // on est en mode ajout et tous les variables sont vides 
-        $titre = "";
-        $nom = "";
-        $prenom = "";
-        $contenu = "";
-    } 
-?>
-
+    <?php include 'header.php'?>
     <section id="article"  >
         <div class="container">
         <div class="col-lg-12 mx-auto text-center pb-5">
@@ -48,10 +25,11 @@
                 <!--  info-->
                     
                 <div id="nav-tab-card" class="tab-pane fade show active">
+
                     <form role="form"  method="POST" >
                     <div class="form-group">
                         <label for="title">Titre</label>
-                        <input type="text" id="titre"  name="titre" value="<?php echo $titre?>" placeholder="Titre" required class="form-control">
+                        <input type="text" id="titre"  name="titre"  placeholder="Titre" required class="form-control">
                     </div>
                     <div class="form-group">
                     <select name ='type_article'>
@@ -67,7 +45,6 @@
                         <label for="cardNumber">Contenu</label>
                         <div class="input-group">
                         <textarea name="contenu" id="contenu" class="md-textarea form-control" rows="3" class="form-control" required></textarea> 
-                        <?php echo $contenu ?> 
                         </div>
                     </div>
                     <div class="row">
