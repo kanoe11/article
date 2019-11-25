@@ -1,4 +1,6 @@
-<?php include('header.php');
+<?php
+ include('template/header.php');
+ include('config/config.php');
 
 ?>
     <!-- Hero Section-->
@@ -41,9 +43,9 @@
                             <td> <?php echo $data[$i]['titre']; ?> </td>
                             <td> <?php echo $data[$i]['nom'].' '.$data[$i]['prenom']; ?> </td>
                             <td class="textToLong"> <?php echo $strraccourcis. "..." ; ?> </td>
-                            <td> <?php echo "<a href='view.php?voir=".$data[$i]['id']."'>voir </a>" ?> </td>
-                            <td> <?php echo "<a href='modify.php?mod=".$data[$i]['id']."'>modifier</a>" ?> </td>
-                            <td> <?php echo "<a href='supprimer.php?del=".$data[$i]['id']."'>supprimer</a>" ?> </td>
+                            <td> <?php echo "<a href='template/article/view.php?voir=".$data[$i]['id']."'>voir </a>" ?> </td>
+                            <td> <?php echo "<a href='template/article/modify.php?mod=".$data[$i]['id']."'>modifier</a>" ?> </td>
+                            <td> <?php echo "<a href='template/article/supprimer.php?del=".$data[$i]['id']."'>supprimer</a>" ?> </td>
                         </tr>
                    <?php }
                    $result->free();

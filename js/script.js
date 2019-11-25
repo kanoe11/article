@@ -2,12 +2,11 @@ $(document).ready(function(){
 
     $('#add').click(function(e){
        // empeche le formulaire de s'envoyer en html
-       debugger;
         e.preventDefault();
         var titre = $("#titre").val();
         var contenu = $("#contenu").val();
         $.ajax({
-                url:'process.php',
+                url:'/article/process.php',
                 type: 'POST',
                 data: {
                     titre: titre,

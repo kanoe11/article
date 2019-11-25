@@ -1,6 +1,6 @@
 <?php
 
-require 'config.php';
+include '../../config/config.php';
 
 $id = 0;
 $update = false;
