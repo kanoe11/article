@@ -1,4 +1,7 @@
-    <?php include 'header.php'?>
+<?php
+ include('../../template/header.php');
+    include (realpath('../../config/config.php'));
+?>
     <section id="article"  >
         <div class="container">
         <div class="col-lg-12 mx-auto text-center pb-5">
@@ -70,4 +73,4 @@
             </div>
         </div>
         </section>
-<?php include 'footer.php';
+<?php// include 'footer.php';

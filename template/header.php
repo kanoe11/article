@@ -1,4 +1,5 @@
-<?php include 'config.php'; ?>
+<?php
+  //include ('/article/config/config.php');?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,24 +10,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/article/css/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/article/css/font-awesome/css/font-awesome.min.css">
     <!-- Custom icon font-->
-    <link rel="stylesheet" href="css/fontastic.css">
-    <!-- Google fonts - Open Sans-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-    <!-- Fancybox-->
-    <link rel="stylesheet" href="vendor/@fancyapps/fancybox/jquery.fancybox.min.css">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="/article/css/bootstrap/css/fontastic.css">
+   
+    <link rel="stylesheet" href="/article/css/bootstrap/css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="/article/css/bootstrap/css/custom.css">
     <!-- js-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/article/js/jquery/jquery.min.js"></script>
+    <script src="/article/css/bootstrap/js/bootstrap.bundle.min.js"></script>
     
-    <script src="js/script.js"></script>
+    <script src="/article/js/script.js"></script>
   </head>
   <body>
         <header class="header">
@@ -59,7 +56,7 @@
             <ul class="navbar-nav ml-auto">
               <li class="nav-item"><a href="index.php" class="nav-link active ">Home</a>
               </li>
-              <li class="nav-item"><a href="add.php" class="nav-link ">Ajouter</a>
+              <li class="nav-item"><a href="template/article/add.php" class="nav-link ">Ajouter</a>
               </li>
               <li class="nav-item"><a href="view.php" class="nav-link ">Post</a>
               </li>

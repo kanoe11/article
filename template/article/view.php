@@ -1,5 +1,4 @@
-<?php include('header.php');
-require 'config.php';
+<?php include('../../template/header.php');
 if(isset($_GET['voir']) && !empty($_GET['voir'])) {
 	$id = $_GET['voir'];
 	$result = $mysqli->query(" select * from article where id =". $id);
