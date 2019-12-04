@@ -40,7 +40,10 @@ if (isset($_POST['update'])){
     $resultat  =  addslashes($contenu);
     $sql = "UPDATE article SET titre='$titre' ,contenu='".$resultat."' WHERE id=".$id;    
     $mysqli->query($sql) or  die (mysqli_error($mysqli));
-    header("Location: index.php");
+    http_response_code(200);
 }
+    http_response_code(500);
+    echo 'Erreur de base de données : '. mysqli_error($mysqli); 
+
 
 

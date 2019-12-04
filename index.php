@@ -38,14 +38,14 @@
                             $strraccourcis =  $data[$i]['contenu'];
                           }
                      ?> 
-                        <tr>
-                        <td> <?php echo $data[$i]['id']; ?> </td>
+                        <tr class="news" data-id="<?php echo $data[$i]['id']?>"> 
+                            <td> <?php echo $data[$i]['id']; ?> </td>
                             <td> <?php echo $data[$i]['titre']; ?> </td>
                             <td> <?php echo $data[$i]['nom'].' '.$data[$i]['prenom']; ?> </td>
                             <td class="textToLong"> <?php echo $strraccourcis. "..." ; ?> </td>
                             <td> <?php echo "<a href='template/article/view.php?voir=".$data[$i]['id']."'>voir </a>" ?> </td>
-                            <td> <?php echo "<a href='template/article/modify.php?mod=".$data[$i]['id']."'>modifier</a>" ?> </td>
-                            <td> <?php echo "<a href='template/article/supprimer.php?del=".$data[$i]['id']."'>supprimer</a>" ?> </td>
+                            <td> <?php echo "<a class='modify' href='template/article/modify.php?mod=".$data[$i]['id']."'>modifier</a>" ?> </td>
+                            <td> <?php echo "<a class='delete' href='template/article/supprimer.php?del=".$data[$i]['id']." ' data-id=".$data[$i]['id'].">supprimer</a>" ?> </td>
                         </tr>
                    <?php }
                    $result->free();
