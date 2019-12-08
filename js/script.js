@@ -15,6 +15,7 @@ $(document).ready(function(){
                 },
                 success: function (data){
                     console.log('formuliare bien envoyer');
+
               },
                 error: function(resultat,statut){
                      alert('erreur non envoyer');
@@ -34,7 +35,8 @@ $(document).ready(function(){
                  },
                  success: function (data){
                      console.log(data);
-                     $(id).remove();
+                     $('tr[data-id='+id+']').remove();
+
                },
                  error: function(resultat,statut){
                       alert('erreur non envoyer');
@@ -42,24 +44,23 @@ $(document).ready(function(){
              });
      });
 
-     $('.modify').click(function(e){
+     $('#update').click(function(e){
         e.preventDefault();
         var titre = $("#titre").val();
         var contenu = $("#contenu").val();
-        var id = $(this).attr("data-id");
+        var id = $('input[name="id"]').val();
         
         $.ajax({
-                url:'/article/procress.php',
+                url:'/article/process.php',
                 type: 'POST',
                 data: {
                     titre : titre,
                     contenu : contenu,
-                    modify : id 
-                    
+                    id : id,
+                    update : '' 
                 },
                 success: function (data){
-                    console.log(data);
-                    
+                    $(location).attr('href', '/article/index.php');
               },
                 error: function(resultat,statut){
                      alert('erreur non envoyer');

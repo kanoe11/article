@@ -1,6 +1,6 @@
 <?php
 
-include '../../config/config.php';
+include('config/config.php');
 
 $id = 0;
 $update = false;
@@ -33,17 +33,18 @@ if (isset($_GET['supprimer'])){
 
 
 if (isset($_POST['update'])){
-    echo "ici";
     $titre = $_POST['titre'];
     $id = $_POST['id'];
     $contenu =  $_POST['contenu'];
     $resultat  =  addslashes($contenu);
     $sql = "UPDATE article SET titre='$titre' ,contenu='".$resultat."' WHERE id=".$id;    
-    $mysqli->query($sql) or  die (mysqli_error($mysqli));
-    http_response_code(200);
+    if( $mysqli->query($sql)) {
+        http_response_code(200);
+    } else {
+        http_response_code(500);
+        echo 'Erreur de base de données : '. mysqli_error($mysqli); 
+    }
 }
-    http_response_code(500);
-    echo 'Erreur de base de données : '. mysqli_error($mysqli); 
 
 
 
